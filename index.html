@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Ultimate CSV to JSON Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>CSV to JSON <span class="pro-badge">PRO</span></h1>
+        <p>「どんなCSVでも来い」という気概で作ったコンバーターです。</p>
+    </header>
+
+    <main>
+        <div id="dropZone" class="drop-zone">
+            <p>ここにCSVファイルをドロップするか、クリックして選択</p>
+            <input type="file" id="fileInput" accept=".csv" hidden>
+        </div>
+
+        <div class="options">
+            <label>
+                <input type="checkbox" id="prettyPrint" checked> 見やすく整形(インデント)
+            </label>
+            <label>
+                <input type="checkbox" id="convertTypes"> 数値・真偽値を自動変換
+            </label>
+        </div>
+
+        <div class="actions">
+            <button id="convertBtn" class="btn-primary">変換実行！</button>
+            <button id="downloadBtn" class="btn-secondary" disabled>JSONをダウンロード</button>
+        </div>
+
+        <div class="output-container">
+            <div class="output-header">
+                <span>Result:</span>
+                <button id="copyBtn">クリップボードにコピー</button>
+            </div>
+            <textarea id="jsonOutput" readonly placeholder="変換結果がここに表示されます..."></textarea>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Crafted with ❤️ for professional data munching.</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
